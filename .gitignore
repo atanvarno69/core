@@ -1,0 +1,4 @@
+# Managed by Composer
+composer.phar
+/vendor/
+# composer.lock

@@ -1,0 +1,40 @@
+{
+    "name": "atan/core",
+    "description": "Framework classes and helper functions.",
+    "keywords": [
+        "http", "framework", "helper"
+    ],
+    "homepage": "https://github.com/atanvarno69/core",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "atanvarno69",
+            "email": "atanvarno69@gmail.com",
+            "homepage": "https://github.com/atanvarno69",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Atan\\Core\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Atan\\Core\\Test\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.0",
+        "psr/log": "^1.0.2",
+        "psr/http-message": "^1.0.1",
+        "http-interop/http-middleware": "^0.4.0",
+        "http-interop/http-factory": "^0.2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7.5",
+        "zendframework/zend-diactoros": "^1.3.7"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
