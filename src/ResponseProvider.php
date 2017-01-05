@@ -37,8 +37,6 @@ trait ResponseProvider
         StreamFactoryInterface $streamFactory,
         ResponseFactoryInterface $responseFactory
     ) {
-        $this->factories['stream'] = $streamFactory;
-        $this->factories['response'] = $responseFactory;
         $this->streamFactory = $streamFactory;
         $this->responseFactory = $responseFactory;
     }
@@ -88,7 +86,7 @@ trait ResponseProvider
      */
     protected function getResponseFactory(): ResponseFactoryInterface
     {
-        return $this->factories['response'];
+        return $this->responseFactory;
     }
 
     /**
@@ -100,6 +98,6 @@ trait ResponseProvider
      */
     protected function getStreamFactory(): StreamFactoryInterface
     {
-        return $this->factories['stream'];
+        return $this->streamFactory;
     }
 }
