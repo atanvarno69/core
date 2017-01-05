@@ -50,7 +50,7 @@ trait ResponseProvider
      */
     protected function buildErrorResponse(int $code = 500): ResponseInterface
     {
-        $response = $this->getPrototypeResponse()
+        $response = $this->buildPrototypeResponse()
             ->withStatus($code)
             ->withHeader('Cache-Control', 'no-cache')
             ->withHeader('Content-Type', 'text/plain; charset=UTF-8');
@@ -69,7 +69,7 @@ trait ResponseProvider
      *
      * @return ResponseInterface PSR-7 response.
      */
-    protected function getPrototypeResponse(): ResponseInterface
+    protected function buildPrototypeResponse(): ResponseInterface
     {
         $stream = $this->getStreamFactory()->createStreamFromResource(
             fopen('php://temp', 'r+')
