@@ -32,9 +32,7 @@ abstract class Core
         ini_set('display_errors', $displayErrors);
         ini_set('display_startup_errors', $displayErrors);
         ini_set('log_errors', (bool) $logPath);
-        if ($logPath) {
-            ini_set('error_log', $logPath);
-        }
+        ini_set('error_log', $logPath);
     }
 
     /**
