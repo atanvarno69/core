@@ -5,7 +5,7 @@
 * [Catcher::setLogger](#setlogger)
 * [Notes](#notes-1)
 ```php
-Catcher implements LoggerAwareInterface, MiddlewareInterface {
+Atan\Core\Catcher implements LoggerAwareInterface, MiddlewareInterface {
 
     public __construct(
         StreamFactoryInterface $streamFactory,
