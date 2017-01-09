@@ -74,6 +74,10 @@ class Catcher implements MiddlewareInterface
     ) {
         $this->parentConstruct($streamFactory, $responseFactory);
         foreach ($customHandlers as $key => $value) {
+            if (!is_int($key)) {
+                $msg = 'Handlers must be indexed by integers';
+                throw new InvalidArgumentException($msg);
+            }
             if (!is_callable($value)) {
                 $msg = 'Handler values must be callable';
                 throw new InvalidArgumentException($msg);
