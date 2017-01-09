@@ -25,12 +25,14 @@ $ composer update
 ```
 
 ## Basic Usage
-The included classes are primarily intended for use by [`atan\framework`](https://github.com/atanvarno69/framework/). However, the classes may be generally useful to you.
+This package is primarily intended for use by [`atan\framework`](https://github.com/atanvarno69/framework/). However, it may be generally useful to you.
 
 ### Catcher
-`Atan\Core\Catcher` is PSR-15 middleware intended to sit at the start of a middleware queue, it will catch any `Throwable` from the queue and return a basic error response, without exposing any developer information.
+`Atan\Core\Catcher` is [PSR-15](http://www.php-fig.org/psr/psr-15/) middleware intended to sit at the start of a middleware queue, it will catch any `Throwable` from the queue and return a basic error response, without exposing any developer information.
 
 Instantiate the class and add it to the top start of your middleware queue.
+
+Custom handlers can be defined for specific error codes. See the [API](https://github.com/atanvarno69/core/blob/master/docs/Catcher.md) for usage details.
 
 ### Core
 `Atan\Core\Core` is a collection of useful static functions.
@@ -44,7 +46,7 @@ ini_set('display_startup_errors', 0);
 ini_set('log_errors', 0);
 ini_set('error_log', '');
 ```
-See the [API](https://github.com/atanvarno69/core/blob/master/docs/Core.md#coreerror) for usage details.
+See the [API](https://github.com/atanvarno69/core/blob/master/docs/Core.md#error) for usage details.
 
 #### Core::path()
 Accepts an arbitrary number of strings and concatenates them with `DIRECTORY_SEPARATOR`. If the resulting path is real, it resolves `..`, etc.
@@ -53,7 +55,7 @@ $path = Atan\Core\Core::path(dirname(__FILE__, 2), 'dirName', 'subDirName', 'fil
 ```
 
 ### Emitter
-`Atan\Core\Emitter` emits a PSR-7 response.
+`Atan\Core\Emitter` emits a [PSR-7](http://www.php-fig.org/psr/psr-7/) response.
 ```php
 $emitter = new Atan\Core\Emitter();
 
@@ -62,7 +64,7 @@ $emitter->emit($response);
 ```
 
 ### Preparer
-`Atan\Core\Preparer` is PSR-15 middleware intended to sit near the start of a middleware queue, it does final preparation on the response to ensure it complies with the HTTP specification before it is emitted.
+`Atan\Core\Preparer` is [PSR-15](http://www.php-fig.org/psr/psr-15/) middleware intended to sit near the start of a middleware queue, it does final preparation on the response to ensure it complies with the HTTP specification before it is emitted.
 
 Instantiate the class and add it to the top start of your middleware queue.
 
