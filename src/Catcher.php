@@ -37,7 +37,7 @@ use Interop\Http\Factory\{
     StreamFactoryInterface
 };
 
-class Catcher implements MiddlewareInterface
+class Catcher implements LoggerAwareInterface, MiddlewareInterface
 {
     /** Trait use block. */
     use LoggerAware;
