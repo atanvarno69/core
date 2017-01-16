@@ -20,7 +20,7 @@ use Interop\Http\Factory\{
 };
 
 /** PHPUnit use block. */
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 /** Factory use block. */
 use Http\Factory\Diactoros\{
@@ -115,4 +115,3 @@ class ResponseProviderTest extends TestCase
         return $method->invokeArgs($obj, $args);
     }
 }
-
